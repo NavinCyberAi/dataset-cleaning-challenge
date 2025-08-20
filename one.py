@@ -1,7 +1,3 @@
-# 📌 data_cleaning.py
-# Simple program to load, check, and clean 6 datasets
-# Human-readable version for easy understanding
-
 import pandas as pd
 
 # Step 1: File names (update path if needed)
@@ -34,9 +30,7 @@ for name, df in datasets.items():
 # Step 4: Fix missing values and duplicates
 cleaned_datasets = {}
 for name, df in datasets.items():
-    # Remove duplicates
     df_cleaned = df.drop_duplicates()
-    # Fill missing values (simple method: fill with "Unknown" or 0)
     df_cleaned = df_cleaned.fillna("Unknown")
     cleaned_datasets[name] = df_cleaned
     print(f"\n Cleaned dataset: {name}")
