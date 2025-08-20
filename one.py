@@ -23,9 +23,9 @@ for name, file in files.items():
 # Step 3: Check for missing values and duplicates
 for name, df in datasets.items():
     print(f"\n Checking dataset: {name}")
-    print("➡ Shape:", df.shape)
-    print("➡ Missing values per column:\n", df.isnull().sum())
-    print("➡ Total Duplicates:", df.duplicated().sum())
+    print("Shape:", df.shape)
+    print("Missing values per column:\n", df.isnull().sum())
+    print("Total Duplicates:", df.duplicated().sum())
 
 # Step 4: Fix missing values and duplicates
 cleaned_datasets = {}
@@ -41,3 +41,4 @@ for name, df in cleaned_datasets.items():
     out_file = f"cleaned_{name}.csv"
     df.to_csv(out_file, index=False)
     print(f" Saved {out_file}")
+
