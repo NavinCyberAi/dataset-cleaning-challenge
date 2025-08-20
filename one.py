@@ -34,11 +34,12 @@ for name, df in datasets.items():
     df_cleaned = df_cleaned.fillna("Unknown")
     cleaned_datasets[name] = df_cleaned
     print(f"\n Cleaned dataset: {name}")
-    print("➡ Shape after cleaning:", df_cleaned.shape)
+    print("Shape after cleaning:", df_cleaned.shape)
 
 # Step 5: Save cleaned files
 for name, df in cleaned_datasets.items():
     out_file = f"cleaned_{name}.csv"
     df.to_csv(out_file, index=False)
     print(f" Saved {out_file}")
+
 
